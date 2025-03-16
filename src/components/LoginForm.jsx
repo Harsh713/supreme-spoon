@@ -51,9 +51,9 @@ const LoginForm = () => {
           Login
         </button>
       </form>
-      <p className="mt-4">
+      <p className=" bg-blue-400 rounded-xl mt-4">
         Don't have an account?{" "}
-        <Link to="/signup" className="text-blue-500">
+        <Link to="/signup" className="text-red-500">
           Sign Up
         </Link>
       </p>

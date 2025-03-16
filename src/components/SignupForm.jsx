@@ -1,18 +1,20 @@
 import { useState } from "react";
-import  supabase  from "../services/supabaseClient";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import supabase from "../services/supabaseClient";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [message, setMessage] = useState(null);
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
     setError(null);
+    setMessage(null);
 
-    const { user, error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
     });
@@ -20,14 +22,22 @@ const SignupForm = () => {
     if (error) {
       setError(error.message);
     } else {
-      navigate("/dashboard"); // Redirect after signup
+      setMessage("Signup successful! Check your email to confirm your account.");
+      setEmail("");
+      setPassword("");
+
+      // Optionally redirect after a delay
+      setTimeout(() => navigate("/login"), 5000);
     }
   };
 
   return (
     <div className="flex flex-col items-center p-6">
-      <h2 className="text-xl font-bold mb-4">Signup</h2>
+      <h2 className="text-green-500 text-xl font-bold mb-4">Signup</h2>
+      
       {error && <p className="text-red-500">{error}</p>}
+      {message && <p className="text-green-500">{message}</p>}
+
       <form onSubmit={handleSignup} className="flex flex-col space-y-4 w-80">
         <input
           type="email"
@@ -45,10 +55,17 @@ const SignupForm = () => {
           required
           className="border p-2 rounded"
         />
-        <button type="submit" className="bg-green-500 text-white p-2 rounded">
+        <button type="submit" className="bg-green-900 text-white p-2 rounded">
           Signup
         </button>
       </form>
+
+      <p className=" bg-blue-400 rounded-xl mt-4">
+        Already have an account?{" "}
+        <Link to="/login" className="text-red-500">
+          Login
+        </Link>
+      </p>
     </div>
   );
 };
