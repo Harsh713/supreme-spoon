@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import supabase from "../services/supabaseClient";
 import SensorChart from "../components/SensorChart";
 import ThemeToggle from "../components/ThemeToggle"; // ✅ Import theme toggle
+import CameraFeed from "../components/CameraFeed";
 import "../styles/global.css";
 
 const Dashboard = () => {
@@ -60,7 +61,7 @@ const Dashboard = () => {
       {/* 🔹 Navbar */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Dashboard</h1>
-        <ThemeToggle /> {/* ✅ Theme Toggle Button */}
+        {/* <ThemeToggle /> ✅ Theme Toggle Button */}
       </div>
 
       {/* 🔹 Sensor Overview */}
@@ -81,6 +82,9 @@ const Dashboard = () => {
           ))}
         </div>
       )}
+      <div>
+        <CameraFeed />
+      </div>
 
       {/* 🔹 Real-Time Sensor Chart */}
       <div className="mt-6">
