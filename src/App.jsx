@@ -8,7 +8,7 @@ import History from "./pages/History";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-
+import Camera from "./pages/Camera";
 function App() {
   const [user, setUser] = useState(() => {
     try {
@@ -46,6 +46,7 @@ function App() {
         {/* ✅ Protected Routes (Requires Login) */}
         <Route path="/" element={user ? <Layout /> : <Navigate to="/login" replace />} >
           <Route index element={<Dashboard />} />
+          <Route path="camera" element={<Camera />} />
           <Route path="controls" element={<Controls />} />
           <Route path="history" element={<History />} />
           <Route path="settings" element={<Settings />} />

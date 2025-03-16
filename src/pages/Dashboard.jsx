@@ -82,9 +82,6 @@ const Dashboard = () => {
           ))}
         </div>
       )}
-      <div>
-        <CameraFeed />
-      </div>
 
       {/* 🔹 Real-Time Sensor Chart */}
       <div className="mt-6">

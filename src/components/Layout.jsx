@@ -21,12 +21,13 @@ const Layout = () => {
     });
 
     return () => {
-      authListener?.subscription?.unsubscribe();
+      authListener.subscription?.unsubscribe();
     };
   }, []);
 
   return (
     <div>
+      {/* ✅ Navbar */}
       <nav className="bg-blue-500 text-white p-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">IoT Dashboard</h1>
 
@@ -37,6 +38,7 @@ const Layout = () => {
               <Link to="/controls" className="hover:underline">Controls</Link>
               <Link to="/history" className="hover:underline">History</Link>
               <Link to="/settings" className="hover:underline">Settings</Link>
+              <Link to="/camera" className="hover:underline">📷 Camera</Link> {/* 📷 New Camera Section */}
               <button 
                 onClick={async () => { 
                   await supabase.auth.signOut(); 
@@ -50,7 +52,7 @@ const Layout = () => {
             </>
           ) : (
             <>
-              {/* ✅ Show both Login and Signup buttons when user is NOT logged in */}
+              {/* ✅ Show Login & Signup when not logged in */}
               <Link to="/login" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Login</Link>
               <Link to="/signup" className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded">Signup</Link>
             </>
@@ -58,6 +60,7 @@ const Layout = () => {
         </div>
       </nav>
 
+      {/* 🔄 Page Content */}
       <div className="p-6">
         <Outlet />
       </div>
