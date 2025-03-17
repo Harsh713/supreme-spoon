@@ -32,8 +32,8 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6">
-      <h2 className="text-green-500 text-xl font-bold mb-4">Signup</h2>
+    <div className="bg-cyan-200 rounded-xl flex flex-col items-center p-6">
+      <h2 className="text-blue-900 text-xl font-bold mb-4">Signup</h2>
       
       {error && <p className="text-red-500">{error}</p>}
       {message && <p className="text-green-500">{message}</p>}
@@ -60,9 +60,9 @@ const SignupForm = () => {
         </button>
       </form>
 
-      <p className=" bg-blue-400 rounded-xl mt-4">
+      <p className=" bg-blue-400 rounded mt-4">
         Already have an account?{" "}
-        <Link to="/login" className="text-red-500">
+        <Link to="/login" className="text-red-800">
           Login
         </Link>
       </p>
