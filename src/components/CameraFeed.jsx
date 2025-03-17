@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const CameraFeed = () => {
-  const cameraURL = "https://192.168.1.2:8080/video"; // Replace with your IP camera stream URL
+  const cameraURL = "http://192.168.1.7:8080/video"; // Replace with your IP camera stream URL
   const [isAvailable, setIsAvailable] = useState(true);
 
   useEffect(() => {
