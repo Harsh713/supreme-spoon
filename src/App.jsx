@@ -46,7 +46,7 @@ function App() {
         {/* ✅ Protected Routes (Requires Login) */}
         <Route path="/" element={user ? <Layout /> : <Navigate to="/login" replace />} >
           <Route index element={<Dashboard />} />
-          <Route path="camera" element={<Camera />} />
+{/*           <Route path="camera" element={<Camera />} /> */}
           <Route path="controls" element={<Controls />} />
           <Route path="history" element={<History />} />
           <Route path="settings" element={<Settings />} />
