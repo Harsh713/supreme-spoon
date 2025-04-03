@@ -38,7 +38,7 @@ const Layout = () => {
               <Link to="/controls" className="hover:underline">Controls</Link>
               <Link to="/history" className="hover:underline">History</Link>
               <Link to="/settings" className="hover:underline">Settings</Link>
-              <Link to="/camera" className="hover:underline">📷 Camera</Link> {/* 📷 New Camera Section */}
+              {/* <Link to="/camera" className="hover:underline">📷 Camera</Link>  */}
               <button 
                 onClick={async () => { 
                   await supabase.auth.signOut(); 
