@@ -1,0 +1,7 @@
+services:
+  - type: worker
+    name: iot-python-simulator
+    env: python
+    buildCommand: ""
+    startCommand: "python main.py"
+    plan: free
