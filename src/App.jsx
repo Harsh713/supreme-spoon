@@ -8,7 +8,7 @@ import History from "./pages/History";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Camera from "./pages/Camera";
+//import Camera from "./pages/Camera";
 function App() {
   const [user, setUser] = useState(() => {
     try {
